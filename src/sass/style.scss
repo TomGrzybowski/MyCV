@@ -1,0 +1,6 @@
+@use "./setup/modern-normalize.scss";
+@use "./setup/setup.scss";
+
+.container {
+    border: 1px black dashed;
+}
