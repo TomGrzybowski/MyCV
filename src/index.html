@@ -13,8 +13,37 @@
 <body>
     <header class="header">
         <div class="container">
-            
-            test
+            <div class="header__image-container">
+                <img
+                class="header__img"
+                src="./assets/me-1200.jpg"
+                srcset="
+                ./assets/me-1200.jpg 1200w,
+                ./assets/me-800.jpg 800w,
+                ./assets/me-400.jpg 400w,
+                ./assets/me-200.jpg 200w
+                "
+                sizes="1200px"
+                alt="Profile picture"
+                width="400"
+                height="400"
+              />
+            </div>
+
+            <svg
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+          </svg>
+
         </div>
     </header>
     

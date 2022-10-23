@@ -1,0 +1,20 @@
+@use "../assets" as *;
+
+.header {
+    width: 100%;
+    background-color: $header-background;
+    
+
+    & > .container {
+        height: 80px;
+        @include flex-space-between (row);
+        padding: 0 15px;
+    }
+
+    &__image-container {
+        border-radius: 50%;
+        border: 1px black dashed;
+        width: 70px;
+        height: 70px;
+    }
+}

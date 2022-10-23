@@ -1,0 +1,16 @@
+@mixin flex-centered ($row) {
+    display: flex;
+flex-direction: $row;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+align-content: center; 
+}
+@mixin flex-space-between ($row) {
+    display: flex;
+flex-direction: $row;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+align-content: center; 
+}
