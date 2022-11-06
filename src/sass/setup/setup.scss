@@ -45,3 +45,19 @@ a {
     }
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+
+    &> * {
+        width: 90%;
+        background-color: $background-card;
+        border-radius: 20px;
+        box-shadow: 8px 8px 20px 0px rgba(66, 68, 90, 1)
+    }
+
+}
