@@ -1,0 +1,69 @@
+@use "../assets" as *;
+
+
+.projects {
+    
+    &__item {
+        position: relative;
+        padding-right: 10px;
+        @include flex-space-between (row);
+        
+        
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__dates {
+        color: $font-light;
+        margin: 0;
+        font-size: 12px;
+    }
+
+    &__link {
+        font-size: 15px;
+        position: relative;
+        margin: 0;
+        
+        &::before {
+            content: "";
+            background-color: $contrast;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            // margin-left: 5px;
+            position: absolute;
+            left: -14px;
+            top: 5px;
+        }
+    }
+
+    &__employer {
+        font-size: 14px;
+        color: $font-light;
+    }
+
+    &__description {
+        font-size: 12px;
+    }
+}
+
+.list-container {
+    margin-left: 15px;
+    border-left: 2px $list-line solid;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    position: relative;
+    &::after {
+        content: "";
+        background-color: $contrast;
+        width: 80%;
+        height: 2px;
+        border-radius: 4px;
+        // margin-left: 5px;
+        position: absolute;
+        // left: -14px;
+        bottom: -15px;
+        left: 5%;
+    } 
+}

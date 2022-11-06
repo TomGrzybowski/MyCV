@@ -1,7 +1,8 @@
 @use "./setup/modern-normalize.scss";
 @use "./setup/setup.scss";
-@use "./components/header";
+@use "./components"
 
-.container {
-    border: 1px black dashed;
-}
+// .container {
+//     border: 1px black dashed;
+// }
+

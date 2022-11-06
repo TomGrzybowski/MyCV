@@ -1,0 +1,12 @@
+@use "../assets" as *;
+
+.footer {
+    background-color: $background-footer;
+    &__header {
+        text-align: center;
+    }
+
+    &__icon {
+        fill: black;
+    }
+}

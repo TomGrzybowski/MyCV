@@ -1,5 +1,47 @@
+@use "../assets" as *;
+
 .container {
     min-width: 320px;
     max-width: 480px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
+    padding-top: 15px;
 }
+
+body {
+    background-color: $background-main;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-header {
+    text-align: center;
+}
+.section-subtitle {
+    text-align: center;
+}
+
+a {
+    &:link {
+        text-decoration: none;
+        color: $link-color;
+    }
+      
+    &:visited {
+        text-decoration: none;
+        color: $link-visited;
+    }
+
+    &:hover {
+        text-decoration: underline;
+        color: $link-hover;
+    }
+
+    &:active {
+        text-decoration: underline;
+        color: $link-hover;
+    }
+}
+
