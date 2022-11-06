@@ -9,4 +9,13 @@
     &__icon {
         fill: black;
     }
+
+    &__list {
+        margin: 0;
+    }
+
+    &> .container {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
 }
