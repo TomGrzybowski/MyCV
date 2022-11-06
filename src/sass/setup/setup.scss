@@ -4,7 +4,7 @@
     min-width: 320px;
     max-width: 480px;
     margin: 0 auto 10px;
-    padding-top: 15px;
+    // padding-top: 5px;
 }
 
 body {
@@ -55,6 +55,7 @@ main {
 
     &> * {
         width: 90%;
+        max-width: calc(480px*0.90);
         background-color: $background-card;
         border-radius: 20px;
         box-shadow: 8px 8px 20px 0px rgba(66, 68, 90, 1)
