@@ -1,12 +1,12 @@
-@use "../assets" as *;
 
+@use "../assets" as *;
 
 .projects {
     
     &__item {
         position: relative;
         padding-right: 10px;
-        @include flex-space-between (row);
+        // @include flex-space-between (row);
         
         
         &:not(:last-child) {
@@ -24,6 +24,7 @@
         font-size: 15px;
         position: relative;
         margin: 0;
+        font-weight: 700;
         
         &::before {
             content: "";

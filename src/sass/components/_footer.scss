@@ -21,3 +21,11 @@
         padding: 15px 0;
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100vw;
+    }
+}

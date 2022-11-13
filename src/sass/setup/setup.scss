@@ -62,3 +62,27 @@ main {
     }
 
 }
+
+@media screen and (min-width: 1200px) {
+    body {
+        height: 100vw;
+    }
+    main {
+        padding-left: 10px;
+        display: grid;
+        gap: 80px;
+        grid-template-columns: repeat(3, 1fr);
+        width: min(90%, 90hv);
+        max-width: 1600px;
+        margin: 100px auto 0;
+        & > .skills {
+            grid-row: span 2;
+        }
+        & > * {
+            height: 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+    }
+} 
