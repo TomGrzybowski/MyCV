@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Tomasz Grzybowski</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__image-container">
+                <img class="header__img" src="./assets/me-1200.jpg" srcset="
+                    ./assets/me-1200.jpg 1200w,
+                    ./assets/me-800.jpg 800w,
+                    ./assets/me-400.jpg 400w,
+                    ./assets/me-200.jpg 200w
+                    " sizes="1200px" alt="Profile picture" width="140" />
+            </div>
+            <h1 class="header__title">
+                Tomasz Grzybowski - CV
+            </h1>
+            <svg class="header__burger" width="36" height="36" fill="currentColor" viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <div class="header__nav">
+                <ul class="header__nav_list">
+                    <li class="header__nav_list_item"> <a href="./index.html">CV</a> </li>
+                    <li class="header__nav_list_item"> <a class="current_page"href="./MyGame.html">MyGame</a></li>
+                </ul>
+            </div>
+    
+        </div>
+    </header>
+
+    <main class="my_game_main">
+
+        <section class="defuser">
+            <div class="container">
+               <form name="game_settings" autocomplete="off" class="defuser__form">
+                    <label for="defuser__rows">Rows:</label>
+                    <input type="number" id="defuser__rows" name="defuser__rows" placeholder="10" value = "10" min="5" max="20"/>
+                    
+                    <label for="defuser__cols">Columns:</label>
+                    <input type="number" id="defuser__cols" name="defuser__cols" placeholder="10" value = "10" min="5" max="20"/>
+                    
+                    <label for="defuser__bombs">Bombs:</label>
+                    <input type="number" id="defuser__bombs" name="defuser__bombs" placeholder="10" value = "10" min="5" max="20"/>
+
+               </form>
+
+               <div class="defuser__game">
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                <div class="defuser__row">
+                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
+                </div>
+                
+                
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h2 class="footer__header">Contact</h2>
+            <ul class="footer__list">
+                <li>
+                    <a class="footer__link" href="tel:+48534014034">
+                        <svg class="footer__icon" height="24" width="24">
+                            <use href="./assets/symbol-defs.svg#icon-mobile"></use>
+                        </svg>
+                        +48 534 014 034
+                    </a>
+                </li>
+                <li>
+                    <a class="footer__link" href="mailto:t.grzybowski94@gmail.com">
+                        <svg class="footer__icon" height="24" width="24">
+                            <use href="./assets/symbol-defs.svg#icon-envelope"></use>
+                        </svg>
+                        t.grzybowski94@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <a class="footer__link" href="./index.html">
+                        <svg class="footer__icon" height="24" width="24">
+                            <use href="./assets/symbol-defs.svg#icon-location"></use>
+                        </svg>
+                        Wrocław, Poland
+                    </a>
+                </li>
+                <li>
+                    <a class="footer__link" href="https://github.com/TomGrzybowski?tab=repositories" target="_blank">
+                        <svg class="footer__icon" height="24" width="24">
+                            <use href="./assets/symbol-defs.svg#icon-github"></use>
+                        </svg>
+                        Github link
+                    </a>
+                </li>
+                <li>
+                    <a class="footer__link" href="https://www.linkedin.com/in/tomasz-grzybowski-2075ba158/"
+                        target="_blank">
+                        <svg class="footer__icon" height="24" width="24">
+                            <use href="./assets/symbol-defs.svg#icon-li"></use>
+                        </svg>
+                        LinkedIn
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

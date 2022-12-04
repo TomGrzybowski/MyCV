@@ -35,11 +35,41 @@
         top: -48px;
         left: -35px;
     }
+
+    &__nav {
+        display: none;
+    }
+
+    &__nav_list {
+        @include flex-space-between (row);
+        gap: 15px;
+    }
+    &__nav_list_item {
+        position: relative;
+    }
 }
 
+.current_page::before {
+    content: "";
+    width: 80%;
+    height: 5px;
+    position: absolute;
+    top: 20px;
+    background-color: $contrast;
+}
+    
 @media screen and (min-width: 1200px) {
     .header {
 
+        &__burger {
+            display: none;
+        }
+
+        &__nav {
+            display: relative;
+            border: black 1px dashed;
+            @include flex-space-between (row);
+        }
 
         & > .container {
             max-width: 800px;
