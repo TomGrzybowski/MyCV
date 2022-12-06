@@ -47,52 +47,19 @@
             <div class="container">
                <form name="game_settings" autocomplete="off" class="defuser__form">
                     <label for="defuser__rows">Rows:</label>
-                    <input type="number" id="defuser__rows" name="defuser__rows" placeholder="10" value = "10" min="5" max="20"/>
+                    <input type="number" id="defuser__rows" name="defuser__rows" placeholder="10" value = "5" min="5" max="20"/>
                     
                     <label for="defuser__cols">Columns:</label>
-                    <input type="number" id="defuser__cols" name="defuser__cols" placeholder="10" value = "10" min="5" max="20"/>
+                    <input type="number" id="defuser__cols" name="defuser__cols" placeholder="10" value = "5" min="5" max="20"/>
                     
                     <label for="defuser__bombs">Bombs:</label>
-                    <input type="number" id="defuser__bombs" name="defuser__bombs" placeholder="10" value = "10" min="5" max="20"/>
+                    <input type="number" id="defuser__bombs" name="defuser__bombs" placeholder="10" value = "5" min="5" max="20"/>
 
-               </form>
+                    <button type="button" class="defuser__play" id="defuser__play">PLAY</button>
+                </form>
 
                <div class="defuser__game">
-                <div class="defuser__row">
-                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                </div>
-                <div class="defuser__row">
-                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                </div>
-                <div class="defuser__row">
-                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                </div>
-                <div class="defuser__row">
-                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                </div>
-                <div class="defuser__row">
-                    <div class="defuser__cell"> 5 <div class="unrevealed is-hidden"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                    <div class="defuser__cell"> 5 <div class="unrevealed"></div></div>
-                </div>
+               </div>
                 
                 
                 
@@ -148,6 +115,100 @@
             </ul>
         </div>
     </footer>
+
+
+    <script>
+
+        const game = document.querySelector(".defuser__game") //this is the main gameplay window
+        const inputs = document.querySelectorAll("input")
+        let rows = document.querySelector("#defuser__rows").value //check for input how many rows
+        let cols = document.querySelector("#defuser__cols").value //check for input how many cols
+        let bombsAmount = document.querySelector("#defuser__bombs").value //check for input how many cols
+        const selectRows = document.querySelectorAll(".defuser__row") //selects all created rows
+        const playButton = document.querySelector("#defuser__play") //Select PLAY button
+        const hiders = document.querySelectorAll(".unrevealed")
+
+        inputs.forEach( input => {  //add event listeners to inputs
+            input.addEventListener("change", handleUpdate)
+        })
+
+        playButton.addEventListener("click", setup) //add event listener to play button
+                
+        function hide() {
+            this.classList.add("is-hidden")
+        }
+
+        function handleUpdate(){
+            rows = document.querySelector("#defuser__rows").value
+            cols = document.querySelector("#defuser__cols").value
+            bombsAmount = document.querySelector("#defuser__bombs").value
+        }
+        
+        function createGrid() {
+            for (let i = 1; i <= rows; i++){ // Create rows loop
+                const rowDiv = document.createElement("div") 
+                rowDiv.classList.add("defuser__row") //add universal class
+                rowDiv.classList.add("row-" + i) //add numered class
+                game.append(rowDiv)
+
+                for (let ii = 1; ii <= cols; ii++) { //Create cells within rows
+                    const cellDiv = document.createElement("div")
+                    cellDiv.classList.add("defuser__cell") //add universal class
+                    cellDiv.classList.add("col-" + ii) //add numered class
+
+                    rowDiv.append(cellDiv) //create the cell
+                    
+                    const span = document.createElement("span") //create a content element
+                    span.classList.add("defuser__cell_content") //add universal class
+
+                    cellDiv.append(span)
+
+                    const hiderDiv = document.createElement("div") //create a hider
+                    hiderDiv.classList.add("unrevealed") //add universal class
+                    hiderDiv.addEventListener("click", hide) //make the cells unhidable
+                    hiderDiv.addEventListener("contextmenu", (e) => { //code rightclick (add flag)
+                        e.preventDefault();
+                        hiderDiv.textContent = "F"; //REPLCAE WITH ICON
+                    }) //make the cells unhidable
+
+                    cellDiv.append(hiderDiv) //add hidder
+                }
+            }
+        }
+
+        function insertBombs() {
+
+            const bombs = new Set()
+
+            //TODO BELOW LINE
+            while (bombs.size !== 5) { //TODO !!!!!!!!! change 5 for a variable ... 
+                let rowNr = Math.floor(Math.random() * rows) + 1
+                let colNr = Math.floor(Math.random() * cols) + 1
+                bombs.add(`${rowNr} - ${colNr}`)
+            }
+            
+            bombs.forEach( el => { //Add a bomb to each randomized bomb location
+                arr = el.split(" - ")
+                row = document.querySelector(".row-" + arr[0])
+                col = row.querySelector(".col-" + arr[1])
+                
+                col.firstChild.textContent = "B" //REPLACE WITH ICON
+            })
+        }
+        
+        function setup() {
+            
+            game.innerHTML = "" // clear content
+            
+            createGrid()
+            insertBombs()
+
+
+        }
+
+        setup()
+        
+    </script>
 </body>
 
 </html>

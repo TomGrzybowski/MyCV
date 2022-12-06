@@ -41,6 +41,14 @@
         line-height: 25x;
         text-align: center;
     }
+
+    &__cell_content {
+        line-height: 25px;
+    }
+
+    &__play {
+        margin-left: 20px;
+    }
 }
 
 .unrevealed {
