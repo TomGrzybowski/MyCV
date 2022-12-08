@@ -1,10 +1,20 @@
-
-const bombs = new Set()
-
-while(bombs.size !== 5) {
-    let rowNr = Math.floor(Math.random() * 100) +1
-    let colNr = Math.floor(Math.random() * 100) +1
-    bombs.add(`${rowNr} - ${colNr}`)
+const object = {
+    key1: true,
+    key2: true,
+    key3: true
 }
 
-console.log(bombs)
+
+// function isTrue(object) {
+    //     if () {
+        //         return true
+        //     }
+        //     return false
+        // }
+        const areTrue = Object.values(object).every(
+            value => value === true
+        )
+
+        console.log(areTrue)
+        // console.log(isTrue(object))
+        
