@@ -57,6 +57,27 @@
         </div>
       </div>
     </header>
+    <div class="backdrop is-hidden">
+      <div class="modal">
+        <button class="close-btn" type="button" data-modal-close>
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="victory is-hidden">
+          <h3 class="end-title">You won!</h3>
+          <p class="end-text">
+            Congratulations, please consider hiring Tomasz
+            <i class="fa-regular fa-face-smile"></i>
+          </p>
+        </div>
+        <div class="defeat is-hidden">
+          <h3 class="end-title">Unfortunately, You lost</h3>
+          <p class="end-text">
+            Do not worry, you may try again. Please also consider hiring Tomasz
+            <i class="fa-regular fa-face-smile"></i>
+          </p>
+        </div>
+      </div>
+    </div>
 
     <main class="my_game_main">
       <section class="defuser">
@@ -92,7 +113,7 @@
               placeholder="10"
               value="5"
               min="5"
-              max="20"
+              max="400"
             />
 
             <button type="button" class="defuser__play" id="defuser__play">
@@ -172,9 +193,16 @@
       const hiders = document.querySelectorAll(".unrevealed");
       const body = document.querySelector("body");
       const cellsObj = {}; //This object will hold all cell coordinates and value true if it is revealed. It will be used to asses win condition
+      const backdrop = document.querySelector(".backdrop");
+      const victoryScreen = document.querySelector(".victory");
+      const defeatScreen = document.querySelector(".defeat");
+      const closeBtn = document.querySelector(".close-btn");
+      let won = false;
+      let bombsLeft = Number(bombsAmount);
 
-      body.addEventListener("click", hideHider); //make the cells unhidable
-      body.addEventListener("contextmenu", flager); //make the cells unhidable
+      body.addEventListener("click", hideHider);
+      body.addEventListener("contextmenu", flager);
+      closeBtn.addEventListener("click", closeModal);
 
       inputs.forEach((input) => {
         //add event listeners to inputs
@@ -208,18 +236,29 @@
           }
 
           if (checkWinCondition()) {
-            console.log("You won!");
+            win();
           }
         }
       }
 
+      function closeModal() {
+        backdrop.classList.add("is-hidden");
+        victoryScreen.classList.add("is-hidden");
+        defeatScreen.classList.add("is-hidden");
+
+        if (!won) {
+          setup();
+        }
+        if (won) {
+          won = false;
+        }
+      }
+      //This function reveals everything around empty cells
       function revealNearEmpty(selectedCell) {
-        //This function reveals everything around empty cells
         const emptyCol = Number(selectedCell.classList[1].split("-")[1]); //find column nr
         const emptyRow = Number(
           selectedCell.closest(".defuser__row").classList[1].split("-")[1]
         );
-        console.log(emptyRow + " - " + emptyCol);
 
         for (let i = emptyRow - 1; i <= emptyRow + 1; i++) {
           if (i < 1 || i > rows) continue; //exclude places out of playing field
@@ -250,13 +289,23 @@
         return areTrue;
       }
 
+      //Execute if player lost (stepped on a bomb)
       function lost(selectedCell) {
-        //Execute if player lost (stepped on a bomb)
         selectedCell.style.backgroundColor = "red";
+
+        backdrop.classList.remove("is-hidden");
+        defeatScreen.classList.remove("is-hidden");
       }
 
+      //Execute if player won (discovered all non-bomb tiles)
+      function win() {
+        won = true;
+        backdrop.classList.remove("is-hidden");
+        victoryScreen.classList.remove("is-hidden");
+      }
+
+      //Helper function to check if the selected cell contains a bomb
       function isBomb(selectedCell) {
-        //Helper function to check if the selected cell contains a bomb
         if (
           selectedCell.firstChild.firstChild &&
           Number(selectedCell.textContent) < 1
@@ -267,9 +316,10 @@
         return false;
       }
 
+      //Adds flag with a right click
       function flager(e) {
-        //Adds flag with a right click
         const hiderBox = e.target;
+
         if (hiderBox.classList[0] === "unrevealed") {
           //execute only if the hider is clicked
           e.preventDefault();
@@ -277,6 +327,27 @@
           svg.classList.add("fa-solid");
           svg.classList.add("fa-flag");
           hiderBox.append(svg);
+          bombsLeft -= 1;
+          updateBombsLeft();
+        } else if (hiderBox.classList[1] === "fa-question") {
+          e.preventDefault();
+          hiderBox.parentElement.innerHTML = "";
+        } else if (hiderBox.classList[1] === "fa-flag") {
+          e.preventDefault();
+          hiderBox.classList.add("fa-question");
+          hiderBox.classList.remove("fa-flag");
+          bombsLeft += 1;
+          updateBombsLeft();
+        }
+      }
+
+      function updateBombsLeft() {
+        const counter = document.querySelector(".defuser__bomb_counter_span");
+
+        if (bombsLeft > 0) {
+          counter.textContent = Number(bombsLeft);
+        } else {
+          counter.textContent = 0;
         }
       }
 
@@ -287,6 +358,22 @@
       }
 
       function createGrid() {
+        const headerRow = document.createElement("div");
+        headerRow.classList.add("defuser__header");
+
+        const bombCounter = document.createElement("p");
+        bombCounter.classList.add("defuser__bomb_counter");
+        bombCounter.textContent = `Bombs left: `;
+
+        const bombCounterSpan = document.createElement("span");
+        bombCounterSpan.classList.add("defuser__bomb_counter_span");
+        bombCounterSpan.textContent = `${bombsLeft}`;
+
+        bombCounter.append(bombCounterSpan);
+        headerRow.append(bombCounter);
+
+        game.append(headerRow);
+
         for (let i = 1; i <= rows; i++) {
           // Create rows loop
           const rowDiv = document.createElement("div");
@@ -319,14 +406,15 @@
       function insertBombs() {
         const bombs = new Set();
 
-        //TODO BELOW LINE
-        while (bombs.size !== 5) {
-          //TODO !!!!!!!!! change 5 for a variable ...
+        while (bombs.size !== Number(bombsAmount)) {
           let rowNr = Math.floor(Math.random() * rows) + 1;
           let colNr = Math.floor(Math.random() * cols) + 1;
           bombs.add(`${rowNr} - ${colNr}`);
           delete cellsObj[`cell-${rowNr}-${colNr}`];
         }
+
+        bombsLeft = bombs.size;
+        updateBombsLeft();
 
         bombs.forEach((el) => {
           //Adds a bomb to each randomized bomb location
@@ -343,8 +431,8 @@
         });
       }
 
+      // a subfunction for inserting numbers into the grid
       function iterateNearBombs(bombRow, bombCol) {
-        // a subfunction for inserting numbers into the grid
         for (let i = bombRow - 1; i <= bombRow + 1; i++) {
           if (i < 1 || i > rows) continue; //exclude places out of playing field
           for (let j = bombCol - 1; j <= bombCol + 1; j++) {
@@ -365,8 +453,8 @@
         }
       }
 
+      //A function that inserts into each cell value showing how many bombs are in near proximity
       function numbersSetup() {
-        //A function that inserts into each cell value showing how many bombs are in near proximity
         const cells = document.querySelectorAll(".defuser__cell");
 
         cells.forEach((el) => {
@@ -380,9 +468,8 @@
         });
       }
 
+      //Sets up the playing field
       function setup() {
-        //Sets up the playing field
-
         game.innerHTML = ""; // clear content
 
         createGrid();
