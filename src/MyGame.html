@@ -1,347 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CV Tomasz Grzybowski</title>
 
-    <script src="https://kit.fontawesome.com/fecc508be4.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/fecc508be4.js"
+      crossorigin="anonymous"
+    ></script>
 
     <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <header class="header">
-        <div class="container">
-            <div class="header__image-container">
-                <img class="header__img" src="./assets/me-1200.jpg" srcset="
-                    ./assets/me-1200.jpg 1200w,
-                    ./assets/me-800.jpg 800w,
-                    ./assets/me-400.jpg 400w,
-                    ./assets/me-200.jpg 200w
-                    " sizes="1200px" alt="Profile picture" width="140" />
-            </div>
-            <h1 class="header__title">
-                Tomasz Grzybowski - CV
-            </h1>
-            <svg class="header__burger" width="36" height="36" fill="currentColor" viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clip-rule="evenodd"></path>
-            </svg>
-            <div class="header__nav">
-                <ul class="header__nav_list">
-                    <li class="header__nav_list_item"> <a href="./index.html">CV</a> </li>
-                    <li class="header__nav_list_item"> <a class="current_page"href="./MyGame.html">MyGame</a></li>
-                </ul>
-            </div>
-    
+      <div class="container">
+        <div class="header__image-container">
+          <img
+            class="header__img"
+            src="./assets/me-1200.jpg"
+            srcset="
+              ./assets/me-1200.jpg 1200w,
+              ./assets/me-800.jpg   800w,
+              ./assets/me-400.jpg   400w,
+              ./assets/me-200.jpg   200w
+            "
+            sizes="1200px"
+            alt="Profile picture"
+            width="140"
+          />
         </div>
+        <h1 class="header__title">Tomasz Grzybowski - CV</h1>
+        <svg
+          class="header__burger"
+          width="36"
+          height="36"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+        <div class="header__nav">
+          <ul class="header__nav_list">
+            <li class="header__nav_list_item"><a href="./index.html">CV</a></li>
+            <li class="header__nav_list_item">
+              <a class="current_page" href="./MyGame.html">MyGame</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <main class="my_game_main">
+      <section class="defuser">
+        <div class="container">
+          <form name="game_settings" autocomplete="off" class="defuser__form">
+            <label for="defuser__rows">Rows:</label>
+            <input
+              type="number"
+              id="defuser__rows"
+              name="defuser__rows"
+              placeholder="10"
+              value="5"
+              min="5"
+              max="20"
+            />
 
-        <section class="defuser">
-            <div class="container">
-               <form name="game_settings" autocomplete="off" class="defuser__form">
-                    <label for="defuser__rows">Rows:</label>
-                    <input type="number" id="defuser__rows" name="defuser__rows" placeholder="10" value = "5" min="5" max="20"/>
-                    
-                    <label for="defuser__cols">Columns:</label>
-                    <input type="number" id="defuser__cols" name="defuser__cols" placeholder="10" value = "5" min="5" max="20"/>
-                    
-                    <label for="defuser__bombs">Bombs:</label>
-                    <input type="number" id="defuser__bombs" name="defuser__bombs" placeholder="10" value = "5" min="5" max="20"/>
+            <label for="defuser__cols">Columns:</label>
+            <input
+              type="number"
+              id="defuser__cols"
+              name="defuser__cols"
+              placeholder="10"
+              value="5"
+              min="5"
+              max="20"
+            />
 
-                    <button type="button" class="defuser__play" id="defuser__play">PLAY</button>
-                </form>
+            <label for="defuser__bombs">Bombs:</label>
+            <input
+              type="number"
+              id="defuser__bombs"
+              name="defuser__bombs"
+              placeholder="10"
+              value="5"
+              min="5"
+              max="20"
+            />
 
-               <div class="defuser__game">
-               </div>
-                
-                
-                
-            </div>
-        </section>
+            <button type="button" class="defuser__play" id="defuser__play">
+              PLAY
+            </button>
+          </form>
+
+          <div class="defuser__game"></div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <h2 class="footer__header">Contact</h2>
-            <ul class="footer__list">
-                <li>
-                    <a class="footer__link" href="tel:+48534014034">
-                        <svg class="footer__icon" height="24" width="24">
-                            <use href="./assets/symbol-defs.svg#icon-mobile"></use>
-                        </svg>
-                        +48 534 014 034
-                    </a>
-                </li>
-                <li>
-                    <a class="footer__link" href="mailto:t.grzybowski94@gmail.com">
-                        <svg class="footer__icon" height="24" width="24">
-                            <use href="./assets/symbol-defs.svg#icon-envelope"></use>
-                        </svg>
-                        t.grzybowski94@gmail.com
-                    </a>
-                </li>
-                <li>
-                    <a class="footer__link" href="./index.html">
-                        <svg class="footer__icon" height="24" width="24">
-                            <use href="./assets/symbol-defs.svg#icon-location"></use>
-                        </svg>
-                        Wrocław, Poland
-                    </a>
-                </li>
-                <li>
-                    <a class="footer__link" href="https://github.com/TomGrzybowski?tab=repositories" target="_blank">
-                        <svg class="footer__icon" height="24" width="24">
-                            <use href="./assets/symbol-defs.svg#icon-github"></use>
-                        </svg>
-                        Github link
-                    </a>
-                </li>
-                <li>
-                    <a class="footer__link" href="https://www.linkedin.com/in/tomasz-grzybowski-2075ba158/"
-                        target="_blank">
-                        <svg class="footer__icon" height="24" width="24">
-                            <use href="./assets/symbol-defs.svg#icon-li"></use>
-                        </svg>
-                        LinkedIn
-                    </a>
-                </li>
-            </ul>
-        </div>
+      <div class="container">
+        <h2 class="footer__header">Contact</h2>
+        <ul class="footer__list">
+          <li class="phone_number">
+            <a class="footer__link" href="tel:+48111111111">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-mobile"></use>
+              </svg>
+              TBD
+            </a>
+          </li>
+          <li>
+            <a class="footer__link" href="mailto:t.grzybowski94@gmail.com">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-envelope"></use>
+              </svg>
+              t.grzybowski94@gmail.com
+            </a>
+          </li>
+          <li>
+            <a class="footer__link" href="./index.html">
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-location"></use>
+              </svg>
+              Wrocław, Poland
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer__link"
+              href="https://github.com/TomGrzybowski?tab=repositories"
+              target="_blank"
+            >
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-github"></use>
+              </svg>
+              Github
+            </a>
+          </li>
+          <li>
+            <a
+              class="footer__link"
+              href="https://www.linkedin.com/in/tomasz-grzybowski-2075ba158/"
+              target="_blank"
+            >
+              <svg class="footer__icon" height="24" width="24">
+                <use href="./assets/symbol-defs.svg#icon-li"></use>
+              </svg>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
     </footer>
 
-
     <script>
+      const game = document.querySelector(".defuser__game"); //this is the main gameplay window
+      const inputs = document.querySelectorAll("input");
+      let rows = document.querySelector("#defuser__rows").value; //check for input how many rows
+      let cols = document.querySelector("#defuser__cols").value; //check for input how many cols
+      let bombsAmount = document.querySelector("#defuser__bombs").value; //check for input how many cols
+      const selectRows = document.querySelectorAll(".defuser__row"); //selects all created rows
+      const playButton = document.querySelector("#defuser__play"); //Select PLAY button
+      const hiders = document.querySelectorAll(".unrevealed");
+      const body = document.querySelector("body");
+      const cellsObj = {}; //This object will hold all cell coordinates and value true if it is revealed. It will be used to asses win condition
 
-        const game = document.querySelector(".defuser__game") //this is the main gameplay window
-        const inputs = document.querySelectorAll("input")
-        let rows = document.querySelector("#defuser__rows").value //check for input how many rows
-        let cols = document.querySelector("#defuser__cols").value //check for input how many cols
-        let bombsAmount = document.querySelector("#defuser__bombs").value //check for input how many cols
-        const selectRows = document.querySelectorAll(".defuser__row") //selects all created rows
-        const playButton = document.querySelector("#defuser__play") //Select PLAY button
-        const hiders = document.querySelectorAll(".unrevealed")
-        const body = document.querySelector("body")
-        const cellsObj = {} //This object will hold all cell coordinates and value true if it is revealed. It will be used to asses win condition
+      body.addEventListener("click", hideHider); //make the cells unhidable
+      body.addEventListener("contextmenu", flager); //make the cells unhidable
 
-        body.addEventListener("click", hideHider) //make the cells unhidable
-        body.addEventListener("contextmenu", flager) //make the cells unhidable
+      inputs.forEach((input) => {
+        //add event listeners to inputs
+        input.addEventListener("change", handleUpdate);
+      });
 
-        inputs.forEach( input => {  //add event listeners to inputs
-            input.addEventListener("change", handleUpdate)
-        })
+      playButton.addEventListener("click", setup); //add event listener to play button
 
-        playButton.addEventListener("click", setup) //add event listener to play button
-                
-        function hideHider(e) {
-            const hiderBox = e.target
-            if (hiderBox.classList[0] === "unrevealed"){ //execute only if the hider is clicked
-                hiderBox.classList.add("is-hidden")
+      function hideHider(e) {
+        const hiderBox = e.target;
+        if (hiderBox.classList[0] === "unrevealed") {
+          //execute only if the hider is clicked
+          hiderBox.classList.add("is-hidden");
 
-                const selectedCell = hiderBox.parentElement
+          const selectedCell = hiderBox.parentElement;
 
-                if (isBomb(selectedCell)){ //Execute only if lost
-                    lost(selectedCell)
-                    return
-                }
+          if (isBomb(selectedCell)) {
+            //Execute only if lost
+            lost(selectedCell);
+            return;
+          }
 
-                const selectedCol = Number(selectedCell.classList[1].split("-")[1]) //find column nr
-                const selectedRow = Number(selectedCell.closest(".defuser__row").classList[1].split("-")[1])
-                cellsObj[`cell-${selectedRow}-${selectedCol}`] = true
+          const selectedCol = Number(selectedCell.classList[1].split("-")[1]); //find column nr
+          const selectedRow = Number(
+            selectedCell.closest(".defuser__row").classList[1].split("-")[1]
+          );
+          cellsObj[`cell-${selectedRow}-${selectedCol}`] = true;
 
-                if (selectedCell.textContent === "") {
-                    revealNearEmpty(selectedCell)
-                }
+          if (selectedCell.textContent === "") {
+            revealNearEmpty(selectedCell);
+          }
 
-                if(checkWinCondition()) {
-                    console.log("You won!")
-                }
+          if (checkWinCondition()) {
+            console.log("You won!");
+          }
+        }
+      }
+
+      function revealNearEmpty(selectedCell) {
+        //This function reveals everything around empty cells
+        const emptyCol = Number(selectedCell.classList[1].split("-")[1]); //find column nr
+        const emptyRow = Number(
+          selectedCell.closest(".defuser__row").classList[1].split("-")[1]
+        );
+        console.log(emptyRow + " - " + emptyCol);
+
+        for (let i = emptyRow - 1; i <= emptyRow + 1; i++) {
+          if (i < 1 || i > rows) continue; //exclude places out of playing field
+          for (let j = emptyCol - 1; j <= emptyCol + 1; j++) {
+            if (j < 1 || j > cols) continue; //exclude places out of playing field
+            if (j === emptyCol && i === emptyRow) continue; //exclude central cell
+            const currentCell = document.querySelector(`.row-${i} > .col-${j}`);
+            let currentCellContent = currentCell.childNodes[0].textContent;
+
+            cellsObj[`cell-${i}-${j}`] = true;
+            if (!currentCell.childNodes[1].classList.contains("is-hidden")) {
+              currentCell.childNodes[1].classList.add("is-hidden");
+            } else {
+              continue;
             }
-        }
 
-        function revealNearEmpty(selectedCell){ //This function reveals everything around empty cells
-            const emptyCol = Number(selectedCell.classList[1].split("-")[1]) //find column nr
-            const emptyRow = Number(selectedCell.closest(".defuser__row").classList[1].split("-")[1])
-            console.log(emptyRow +" - "+ emptyCol)
-
-            for (let i = emptyRow - 1; i <= emptyRow + 1; i++) {
-                if (i < 1 || i > rows) continue //exclude places out of playing field
-                for (let j = emptyCol - 1; j <= emptyCol + 1; j++) {
-                    if (j < 1 || j > cols) continue //exclude places out of playing field
-                    if (j === emptyCol && i === emptyRow) continue //exclude central cell
-                    const currentCell = document.querySelector(`.row-${i} > .col-${j}`)
-                    let currentCellContent = currentCell.childNodes[0].textContent
-                    
-                    cellsObj[`cell-${i}-${j}`] = true
-                    if (!currentCell.childNodes[1].classList.contains("is-hidden")){
-                        currentCell.childNodes[1].classList.add("is-hidden")
-                    } else {
-                        continue
-                    }
-                    
-                    
-                    if (currentCellContent === "") {
-                        
-                        revealNearEmpty(currentCell)
-                    }
-                }
+            if (currentCellContent === "") {
+              revealNearEmpty(currentCell);
             }
+          }
+        }
+      }
 
+      function checkWinCondition() {
+        const areTrue = Object.values(cellsObj).every(
+          (value) => value === true
+        );
+        return areTrue;
+      }
 
-            /*for (let i = emptyRow - 1; i <= emptyRow + 1; i++) {
-                if (i < 1 || i > rows) continue //exclude places out of playing field
-                for (let j = emptyCol - 1; j <= emptyCol + 1; j++) {
-                    if (j < 1 || j > cols) continue //exclude places out of playing field
-                    if (j === emptyCol && i === emptyRow) continue //exclude central cell
-                    const currentCell = document.querySelector(`.row-${i} > .col-${j}`)
-                    let currentCellContent = currentCell.childNodes[0].textContent
+      function lost(selectedCell) {
+        //Execute if player lost (stepped on a bomb)
+        selectedCell.style.backgroundColor = "red";
+      }
 
-                    currentCell.childNodes[1].classList.remove("is-hidden")
-                    
-                    if (currentCellContent === "") {
-                        revealNearEmpty(currentCell)
-                    } 
-                }
-            }*/
+      function isBomb(selectedCell) {
+        //Helper function to check if the selected cell contains a bomb
+        if (
+          selectedCell.firstChild.firstChild &&
+          Number(selectedCell.textContent) < 1
+        ) {
+          //Execute only if lost
+          return true;
+        }
+        return false;
+      }
+
+      function flager(e) {
+        //Adds flag with a right click
+        const hiderBox = e.target;
+        if (hiderBox.classList[0] === "unrevealed") {
+          //execute only if the hider is clicked
+          e.preventDefault();
+          const svg = document.createElement("i");
+          svg.classList.add("fa-solid");
+          svg.classList.add("fa-flag");
+          hiderBox.append(svg);
+        }
+      }
+
+      function handleUpdate() {
+        rows = document.querySelector("#defuser__rows").value;
+        cols = document.querySelector("#defuser__cols").value;
+        bombsAmount = document.querySelector("#defuser__bombs").value;
+      }
+
+      function createGrid() {
+        for (let i = 1; i <= rows; i++) {
+          // Create rows loop
+          const rowDiv = document.createElement("div");
+          rowDiv.classList.add("defuser__row"); //add universal class
+          rowDiv.classList.add("row-" + i); //add numered class
+          game.append(rowDiv);
+
+          for (let ii = 1; ii <= cols; ii++) {
+            //Create cells within rows
+            const cellDiv = document.createElement("div");
+            cellDiv.classList.add("defuser__cell"); //add universal class
+            cellDiv.classList.add("col-" + ii); //add numered class
+            cellsObj[`cell-${i}-${ii}`] = false;
+
+            rowDiv.append(cellDiv); //create the cell
+
+            const span = document.createElement("span"); //create a content element
+            span.classList.add("defuser__cell_content"); //add universal class
+
+            cellDiv.append(span);
+
+            const hiderDiv = document.createElement("div"); //create a hider
+            hiderDiv.classList.add("unrevealed"); //add universal class
+
+            cellDiv.append(hiderDiv); //add hidder
+          }
+        }
+      }
+
+      function insertBombs() {
+        const bombs = new Set();
+
+        //TODO BELOW LINE
+        while (bombs.size !== 5) {
+          //TODO !!!!!!!!! change 5 for a variable ...
+          let rowNr = Math.floor(Math.random() * rows) + 1;
+          let colNr = Math.floor(Math.random() * cols) + 1;
+          bombs.add(`${rowNr} - ${colNr}`);
+          delete cellsObj[`cell-${rowNr}-${colNr}`];
         }
 
-        function checkWinCondition(){
-            const areTrue = Object.values(cellsObj).every(value => value === true)
-            return areTrue
-        }
+        bombs.forEach((el) => {
+          //Adds a bomb to each randomized bomb location
+          const svg = document.createElement("i");
 
-        function lost(selectedCell){ //Execute if player lost (stepped on a bomb)
-            selectedCell.style.backgroundColor = "red";
-        }
+          svg.classList.add("fa-solid");
+          svg.classList.add("fa-bomb");
 
-        function isBomb(selectedCell) { //Helper function to check if the selected cell contains a bomb
-            if (selectedCell.firstChild.firstChild && Number(selectedCell.textContent) < 1) { //Execute only if lost
-                return true
+          arr = el.split(" - ");
+          row = document.querySelector(".row-" + arr[0]);
+          col = row.querySelector(".col-" + arr[1]);
+
+          col.firstChild.append(svg);
+        });
+      }
+
+      function iterateNearBombs(bombRow, bombCol) {
+        // a subfunction for inserting numbers into the grid
+        for (let i = bombRow - 1; i <= bombRow + 1; i++) {
+          if (i < 1 || i > rows) continue; //exclude places out of playing field
+          for (let j = bombCol - 1; j <= bombCol + 1; j++) {
+            if (j < 1 || j > cols) continue; //exclude places out of playing field
+            if (j === bombCol && i === bombRow) continue;
+            const currentCell = document.querySelector(`.row-${i} > .col-${j}`);
+            let currentCellContent = currentCell.childNodes[0].textContent;
+
+            if (isBomb(currentCell)) continue;
+            if (currentCellContent === "") {
+              currentCell.childNodes[0].textContent = 1;
+            } else {
+              currentCell.childNodes[0].textContent = String(
+                Number(currentCell.childNodes[0].textContent) + 1
+              );
             }
-            return false
+          }
         }
+      }
 
-        function flager(e) { //Adds flag with a right click
-            const hiderBox = e.target
-            if (hiderBox.classList[0] === "unrevealed") { //execute only if the hider is clicked
-                e.preventDefault();
-                hiderBox.textContent = "F";
-            } 
-        }
+      function numbersSetup() {
+        //A function that inserts into each cell value showing how many bombs are in near proximity
+        const cells = document.querySelectorAll(".defuser__cell");
 
-        function handleUpdate(){
-            rows = document.querySelector("#defuser__rows").value
-            cols = document.querySelector("#defuser__cols").value
-            bombsAmount = document.querySelector("#defuser__bombs").value
-        }
-        
-        function createGrid() {
-            for (let i = 1; i <= rows; i++){ // Create rows loop
-                const rowDiv = document.createElement("div") 
-                rowDiv.classList.add("defuser__row") //add universal class
-                rowDiv.classList.add("row-" + i) //add numered class
-                game.append(rowDiv)
+        cells.forEach((el) => {
+          if (isBomb(el)) {
+            const bombCol = Number(el.classList[1].split("-")[1]); //find bomb column nr
+            const bombRow = Number(
+              el.closest(".defuser__row").classList[1].split("-")[1]
+            ); // find bomb row nr
+            iterateNearBombs(bombRow, bombCol);
+          }
+        });
+      }
 
-                for (let ii = 1; ii <= cols; ii++) { //Create cells within rows
-                    const cellDiv = document.createElement("div")
-                    cellDiv.classList.add("defuser__cell") //add universal class
-                    cellDiv.classList.add("col-" + ii) //add numered class
-                    cellsObj[`cell-${i}-${ii}`] = false
-                    
-                    rowDiv.append(cellDiv) //create the cell
-                    
-                    const span = document.createElement("span") //create a content element
-                    span.classList.add("defuser__cell_content") //add universal class
+      function setup() {
+        //Sets up the playing field
 
-                    cellDiv.append(span)
+        game.innerHTML = ""; // clear content
 
-                    const hiderDiv = document.createElement("div") //create a hider
-                    hiderDiv.classList.add("unrevealed") //add universal class
-                    
+        createGrid();
+        insertBombs();
+        numbersSetup();
+      }
 
-                    cellDiv.append(hiderDiv) //add hidder
-                }
-            }
-        }
-
-        function insertBombs() {
-
-            const bombs = new Set()
-
-            //TODO BELOW LINE
-            while (bombs.size !== 5) { //TODO !!!!!!!!! change 5 for a variable ... 
-                let rowNr = Math.floor(Math.random() * rows) + 1
-                let colNr = Math.floor(Math.random() * cols) + 1
-                bombs.add(`${rowNr} - ${colNr}`)
-                delete cellsObj[`cell-${rowNr}-${colNr}`]
-            }
-            
-            bombs.forEach( el => { //Adds a bomb to each randomized bomb location
-                const svg = document.createElement("i")
-                
-                svg.classList.add("fa-solid")
-                svg.classList.add("fa-bomb")
-
-                arr = el.split(" - ")
-                row = document.querySelector(".row-" + arr[0])
-                col = row.querySelector(".col-" + arr[1])
-
-                col.firstChild.append(svg) 
-            })
-        }
-
-        function iterateNearBombs(bombRow, bombCol){ // a subfunction for inserting numbers into the grid
-            for (let i = bombRow - 1; i <= bombRow + 1; i++) {
-                if (i < 1 || i > rows) continue //exclude places out of playing field
-                for (let j = bombCol - 1; j <= bombCol + 1; j++) {
-                    if (j < 1 || j > cols) continue //exclude places out of playing field
-                    if (j === bombCol && i === bombRow) continue
-                    const currentCell = document.querySelector(`.row-${i} > .col-${j}`)
-                    let currentCellContent = currentCell.childNodes[0].textContent
-
-                    if (isBomb(currentCell)) continue 
-                    if (currentCellContent === "") {
-                        currentCell.childNodes[0].textContent = 1
-                    } else {
-                        currentCell.childNodes[0].textContent = String(Number(currentCell.childNodes[0].textContent) + 1)
-                    }
-                }
-            }
-        }
-
-        function numbersSetup () { //A function that inserts into each cell value showing how many bombs are in near proximity
-            const cells = document.querySelectorAll(".defuser__cell")
-
-            cells.forEach( el => {
-                if (isBomb(el)){
-                    const bombCol = Number(el.classList[1].split("-")[1]) //find bomb column nr
-                    const bombRow = Number(el.closest(".defuser__row").classList[1].split("-")[1]) // find bomb row nr
-                    iterateNearBombs(bombRow, bombCol)
-                }
-            })
-
-        }
-        
-        function setup() { //Sets up the playing field
-            
-            game.innerHTML = "" // clear content
-            
-            createGrid()
-            insertBombs()
-            numbersSetup()
-        }
-
-        setup()
-        
+      setup();
     </script>
-</body>
-
+  </body>
 </html>

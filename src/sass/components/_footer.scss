@@ -1,31 +1,47 @@
 @use "../assets" as *;
 
 .footer {
-    background-color: $background-footer;
-    
-    &__header {
-        text-align: center;
-        margin-top: 0;
-    }
+  background-color: $background-footer;
 
-    &__icon {
-        fill: black;
-    }
+  &__header {
+    text-align: center;
+    margin-top: 0;
+  }
 
-    &__list {
-        margin: 0;
-    }
+  &__icon {
+    fill: black;
+    margin-right: 5px;
+  }
 
-    &> .container {
-        margin-bottom: 0;
-        padding: 15px 0;
+  &__list {
+    margin: 0;
+    &:hover > a svg {
+      fill: $contrast;
     }
+  }
+
+  & > .container {
+    margin-bottom: 0;
+    padding: 15px 0;
+  }
+
+  &__link:hover svg {
+    fill: $contrast;
+  }
+}
+
+.phone_number {
+  display: none;
 }
 
 @media screen and (min-width: 1200px) {
-    .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100vw;
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    &__list {
+      display: grid;
+      grid-template-columns: 50% 50%;
     }
+  }
 }

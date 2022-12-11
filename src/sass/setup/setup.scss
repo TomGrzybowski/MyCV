@@ -1,93 +1,94 @@
 @use "../assets" as *;
 
 .container {
-    min-width: 320px;
-    max-width: 480px;
-    margin: 0 auto 10px;
-    // padding-top: 5px;
+  min-width: 320px;
+  max-width: 480px;
+  margin: 0 auto 10px;
+  // padding-top: 5px;
 }
 
 body {
-    background-color: $background-main;
+  background-color: $background-main;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .section-header {
-    text-align: center;
+  text-align: center;
 }
 .section-subtitle {
-    text-align: center;
+  text-align: center;
 }
 
 a {
-    &:link {
-        text-decoration: none;
-        color: $link-color;
-    }
-      
-    &:visited {
-        text-decoration: none;
-        color: $link-visited;
-    }
+  &:link {
+    text-decoration: none;
+    color: $link-color;
+  }
 
-    &:hover {
-        text-decoration: underline;
-        color: $link-hover;
-    }
+  &:visited {
+    text-decoration: none;
+    color: $link-visited;
+  }
 
-    &:active {
-        text-decoration: underline;
-        color: $link-hover;
-    }
+  &:hover {
+    text-decoration: underline;
+    color: $link-hover;
+  }
+
+  &:active {
+    text-decoration: underline;
+    color: $link-hover;
+  }
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    background-color: $background-main;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  background-color: $background-main;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
 
-    &> * {
-        width: 90%;
-        max-width: calc(480px*0.90);
-        background-color: $background-card;
-        border-radius: 20px;
-        // border: #1985a1 solid 1px;
-        box-shadow: 8px 8px 20px 0px rgba(25, 133, 161, 1)
-    }
-
+  & > * {
+    width: 90%;
+    max-width: calc(480px * 0.9);
+    background-color: $background-card;
+    border-radius: 20px;
+    // border: #1985a1 solid 1px;
+    box-shadow: 8px 8px 20px 0px rgba(25, 133, 161, 1);
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    body {
-        // height: 100vw;
+  body {
+    // height: 100vw;
+  }
+  main {
+    padding: 0 20px;
+    display: grid;
+    gap: 80px;
+    grid-template-columns: repeat(3, 1fr);
+    width: min(90%, 90hv);
+    max-width: 1600px;
+    margin: 100px auto 300px;
+    & > .skills {
+      grid-row: span 2;
     }
-    main {
-        padding: 0 20px;
-        display: grid;
-        gap: 80px;
-        grid-template-columns: repeat(3, 1fr);
-        width: min(90%, 90hv);
-        max-width: 1600px;
-        margin: 100px auto 300px;
-        & > .skills {
-            grid-row: span 2;
-        }
-        & > * {
-            height: 100%;
-            width: 100%;
-            max-width: 100%;
-        }
-
+    & > * {
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
     }
-} 
+  }
+}
 
 .is-hidden {
-    display: none;
+  display: none;
+  pointer-events: none;
+  //   visibility: hidden;
+  //   opacity: 0;
 }

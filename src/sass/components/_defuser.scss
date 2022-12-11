@@ -1,66 +1,73 @@
 @use "../assets" as *;
 
 .my_game_main {
-    grid-template-columns: auto;
+  grid-template-columns: auto;
 }
 
 .defuser {
-    & >.container {
-        padding: 10px;
-        display: relative;
-        max-width: 100%;
-    }
+  & > .container {
+    padding: 10px;
+    display: relative;
+    max-width: 100%;
+  }
 
-    &__form {
-        margin: auto;
-        width: fit-content;
-        margin-bottom: 30px;
-    }
+  &__form {
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 30px;
+  }
 
-    &__form > input {
-        width: 45px;
-    }
+  &__form > input {
+    width: 45px;
+  }
 
-    &__game {
-        border: 2px black solid;
-        width: fit-content;
-        padding: 5px;
-        margin: auto;
-    }
-    
-    &__row {
-        position: relative;
-        display: flex;
-    }
+  &__game {
+    border: 2px black solid;
+    width: fit-content;
+    padding: 5px;
+    margin: auto;
+  }
 
-    &__cell{
-        position: relative;
-        width: 25px;
-        height: 25px;
-        border: 1px black solid;
-        line-height: 25x;
-        text-align: center;
-    }
+  &__row {
+    position: relative;
+    display: flex;
+  }
 
-    &__cell_content {
-        line-height: 25px;
-    }
+  &__cell {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border: 1px black solid;
+    line-height: 25x;
+    text-align: center;
+  }
 
-    &__play {
-        margin-left: 20px;
-    }
+  &__cell_content {
+    line-height: 25px;
+  }
+
+  &__play {
+    margin-left: 20px;
+    cursor: pointer;
+  }
 }
 
 .unrevealed {
-    position: absolute;
-    top: 0;
-    // display: none;
-    width: 23px;
-    height: 23px;
-    // background-color: black;
-    // border: black 1px solid;
-    background-color: $background-card;
-    -webkit-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
-        -moz-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
-        box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background-color: $background-card;
+  -webkit-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+  -moz-box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+  box-shadow: inset 0px 0px 17px -10px rgba(0, 0, 0, 1);
+}
+
+.fa-flag {
+  padding: 3px;
+}
+
+.fa-bomb {
+  padding: 3px;
 }
