@@ -468,10 +468,26 @@
         });
       }
 
+      function checkSettings() {
+        if (Number(bombsAmount) > Number(rows) * Number(cols) - 1) {
+          return true;
+        }
+        return false;
+      }
       //Sets up the playing field
       function setup() {
         game.innerHTML = ""; // clear content
 
+        checkSettings();
+        if (checkSettings()) {
+          alert(
+            "So many bombs won't fit on such little grid. Please increase the size of playing field or lower the amount of bombs"
+          );
+          game.textContent =
+            "Too many bombs for so little cells. Please try different settings";
+          return;
+        }
+        console.log(checkSettings());
         createGrid();
         insertBombs();
         numbersSetup();

@@ -12,25 +12,16 @@ Use a better box model (opinionated).
   box-sizing: border-box;
 }
 
-.fa-solid {
-  padding: 3px;
-  color: #1985a1;
-}
-
 /**
 1. Correct the line height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
 3. Use a more readable tab size (opinionated).
 */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-  -moz-tab-size: 4;
-  /* 3 */
-  tab-size: 4;
-  /* 3 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  -moz-tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
 }
 
 /*
@@ -42,8 +33,7 @@ Sections
 2. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 body {
-  margin: 0;
-  /* 1 */
+  margin: 0; /* 1 */
 }
 
 /*
@@ -55,10 +45,8 @@ Grouping content
 2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
 */
 hr {
-  height: 0;
-  /* 1 */
-  color: inherit;
-  /* 2 */
+  height: 0; /* 1 */
+  color: inherit; /* 2 */
 }
 
 /*
@@ -89,10 +77,8 @@ kbd,
 samp,
 pre {
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
-    monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+    monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -130,10 +116,8 @@ Tabular data
 2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 */
 table {
-  text-indent: 0;
-  /* 1 */
-  border-color: inherit;
-  /* 2 */
+  text-indent: 0; /* 1 */
+  border-color: inherit; /* 2 */
 }
 
 /*
@@ -149,14 +133,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -227,10 +207,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 [type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -245,10 +223,8 @@ Remove the inner padding in Chrome and Safari on macOS.
 2. Change font properties to 'inherit' in Safari.
 */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /*
@@ -289,17 +265,14 @@ a:link {
   text-decoration: none;
   color: #46494c;
 }
-
 a:visited {
   text-decoration: none;
   color: #46494c;
 }
-
 a:hover {
   text-decoration: underline;
   color: #1985a1;
 }
-
 a:active {
   text-decoration: underline;
   color: #1985a1;
@@ -313,7 +286,6 @@ main {
   gap: 20px;
   padding: 20px 0;
 }
-
 main > * {
   width: 90%;
   max-width: 432px;
@@ -332,20 +304,18 @@ main > * {
     max-width: 1600px;
     margin: 100px auto 300px;
   }
-
   main > .skills {
     grid-row: span 2;
   }
-
   main > * {
     height: 100%;
     width: 100%;
     max-width: 100%;
   }
 }
-
 .is-hidden {
   display: none;
+  pointer-events: none;
 }
 
 .header {
@@ -355,9 +325,8 @@ main > * {
   position: sticky;
   top: 0px;
   z-index: 10;
-  color: white;
+  color: #e9e9e9;
 }
-
 .header > .container {
   height: 80px;
   display: flex;
@@ -368,29 +337,24 @@ main > * {
   align-content: center;
   padding: 0 15px;
 }
-
 .header__image-container {
   border-radius: 50%;
   width: 70px;
   height: 70px;
   overflow: hidden;
 }
-
 .header__title {
   font-size: 14px;
 }
-
 .header__img {
   object-fit: cover;
   position: relative;
   top: -48px;
   left: -35px;
 }
-
 .header__nav {
   display: none;
 }
-
 .header__nav_list {
   display: flex;
   flex-direction: row;
@@ -400,9 +364,11 @@ main > * {
   align-content: center;
   gap: 15px;
 }
-
 .header__nav_list_item {
   position: relative;
+}
+.header__nav_list_item a {
+  color: #e9e9e9;
 }
 
 .current_page::before {
@@ -418,10 +384,8 @@ main > * {
   .header__burger {
     display: none;
   }
-
   .header__nav {
     display: relative;
-    border: black 1px dashed;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -429,17 +393,14 @@ main > * {
     align-items: center;
     align-content: center;
   }
-
   .header > .container {
     max-width: 800px;
   }
 }
-
 .experience__item {
   position: relative;
   padding-right: 10px;
 }
-
 .experience__item::after {
   content: "";
   background-color: #1985a1;
@@ -450,23 +411,19 @@ main > * {
   bottom: -15px;
   left: 5%;
 }
-
 .experience__item:not(:last-child) {
   margin-bottom: 40px;
 }
-
 .experience__dates {
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
   margin: 0;
   font-size: 12px;
 }
-
 .experience__job-title {
   font-size: 15px;
   position: relative;
   margin: 0;
 }
-
 .experience__job-title::before {
   content: "";
   background-color: #1985a1;
@@ -477,12 +434,10 @@ main > * {
   left: -14px;
   top: 5px;
 }
-
 .experience__employer {
   font-size: 14px;
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
 }
-
 .experience__description {
   font-size: 12px;
 }
@@ -497,7 +452,6 @@ main > * {
   position: relative;
   padding-right: 10px;
 }
-
 .education__item::after {
   content: "";
   background-color: #1985a1;
@@ -508,23 +462,19 @@ main > * {
   bottom: -15px;
   left: 5%;
 }
-
 .education__item:not(:last-child) {
   margin-bottom: 40px;
 }
-
 .education__dates {
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
   margin: 0;
   font-size: 12px;
 }
-
 .education__major {
   font-size: 15px;
   position: relative;
   margin: 0;
 }
-
 .education__major::before {
   content: "";
   background-color: #1985a1;
@@ -535,12 +485,10 @@ main > * {
   left: -14px;
   top: 5px;
 }
-
 .education__university {
   font-size: 14px;
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
 }
-
 .education__description {
   font-size: 12px;
 }
@@ -561,23 +509,19 @@ main > * {
   align-items: center;
   align-content: center;
 }
-
 .skills__item:not(:last-child) {
   margin-bottom: 20px;
 }
-
 .skills__dates {
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
   margin: 0;
   font-size: 12px;
 }
-
 .skills__skill {
   font-size: 15px;
   position: relative;
   margin: 0;
 }
-
 .skills__skill::before {
   content: "";
   background-color: #1985a1;
@@ -588,12 +532,10 @@ main > * {
   left: -14px;
   top: 5px;
 }
-
 .skills__employer {
   font-size: 14px;
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
 }
-
 .skills__description {
   font-size: 12px;
 }
@@ -605,7 +547,6 @@ main > * {
   padding-left: 10px;
   position: relative;
 }
-
 .list-container::after {
   content: "";
   background-color: #1985a1;
@@ -621,7 +562,6 @@ main > * {
   position: relative;
   padding-right: 10px;
 }
-
 .certificates__item::after {
   content: "";
   background-color: #1985a1;
@@ -632,23 +572,19 @@ main > * {
   bottom: -15px;
   left: 5%;
 }
-
 .certificates__item:not(:last-child) {
   margin-bottom: 40px;
 }
-
 .certificates__dates {
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
   margin: 0;
   font-size: 12px;
 }
-
 .certificates__name {
   font-size: 15px;
   position: relative;
   margin: 0;
 }
-
 .certificates__name::before {
   content: "";
   background-color: #1985a1;
@@ -659,12 +595,10 @@ main > * {
   left: -14px;
   top: 5px;
 }
-
 .certificates__source {
   font-size: 14px;
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
 }
-
 .certificates__description {
   font-size: 12px;
 }
@@ -679,26 +613,34 @@ main > * {
   position: relative;
   padding-right: 10px;
 }
-
 .projects__item:not(:last-child) {
   margin-bottom: 20px;
 }
-
 .projects__dates {
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
   margin: 0;
   font-size: 12px;
 }
-
 .projects__link {
   font-size: 15px;
   position: relative;
   margin: 0;
   font-weight: 700;
 }
-
+.projects__link:link {
+  text-decoration: none;
+  color: #1985a1;
+}
+.projects__link:visited {
+  text-decoration: none;
+  color: #1985a1;
+}
+.projects__link:hover {
+  text-decoration: underline;
+  color: #1985a1;
+}
 .projects__link::before {
-  content: "";
+  content: url("/src/assets/arrow-right-solid.svg");
   background-color: #1985a1;
   width: 6px;
   height: 6px;
@@ -706,13 +648,21 @@ main > * {
   position: absolute;
   left: -14px;
   top: 5px;
+  transition-property: all;
+  transition-duration: 200ms;
 }
-
+.projects__link:hover::before {
+  content: "\f061";
+  font: var(--fa-font-regular);
+  font-weight: 900;
+  left: -15px;
+  top: 0;
+  background: rgba(0, 0, 0, 0);
+}
 .projects__employer {
   font-size: 14px;
-  color: rgb(184, 184, 184);
+  color: rgb(117, 117, 117);
 }
-
 .projects__description {
   font-size: 12px;
 }
@@ -724,7 +674,6 @@ main > * {
   padding-left: 10px;
   position: relative;
 }
-
 .list-container::after {
   content: "";
   background-color: #1985a1;
@@ -739,23 +688,30 @@ main > * {
 .footer {
   background-color: #c5c3c6;
 }
-
 .footer__header {
   text-align: center;
   margin-top: 0;
 }
-
 .footer__icon {
   fill: black;
+  margin-right: 5px;
 }
-
 .footer__list {
   margin: 0;
 }
-
+.footer__list:hover > a svg {
+  fill: #1985a1;
+}
 .footer > .container {
   margin-bottom: 0;
   padding: 15px 0;
+}
+.footer__link:hover svg {
+  fill: #1985a1;
+}
+
+.phone_number {
+  display: none;
 }
 
 @media screen and (min-width: 1200px) {
@@ -764,8 +720,11 @@ main > * {
     bottom: 0;
     width: 100vw;
   }
+  .footer__list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
 }
-
 .my_game_main {
   grid-template-columns: auto;
 }
@@ -775,29 +734,24 @@ main > * {
   display: relative;
   max-width: 100%;
 }
-
 .defuser__form {
   margin: auto;
   width: fit-content;
   margin-bottom: 30px;
 }
-
 .defuser__form > input {
   width: 45px;
 }
-
 .defuser__game {
   border: 2px black solid;
   width: fit-content;
   padding: 5px;
   margin: auto;
 }
-
 .defuser__row {
   position: relative;
   display: flex;
 }
-
 .defuser__cell {
   position: relative;
   width: 25px;
@@ -806,9 +760,37 @@ main > * {
   line-height: 25x;
   text-align: center;
 }
+.defuser__cell_content {
+  line-height: 25px;
+}
+.defuser__play {
+  margin-left: 20px;
+  cursor: pointer;
+  border: 2px solid #1985a1;
+  border-radius: 5px;
+  color: #1985a1;
+  background-color: #dcdcdd;
+}
+.defuser__header {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.defuser__bomb_counter {
+  display: inline;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+.defuser__bomb_counter_span {
+  color: #1985a1;
+  font-weight: 900;
+  font-size: 1.3em;
+}
 
 .unrevealed {
   position: absolute;
+  cursor: pointer;
   top: 0;
   width: 23px;
   height: 23px;
@@ -816,4 +798,61 @@ main > * {
   -webkit-box-shadow: inset 0px 0px 17px -10px rgb(0, 0, 0);
   -moz-box-shadow: inset 0px 0px 17px -10px rgb(0, 0, 0);
   box-shadow: inset 0px 0px 17px -10px rgb(0, 0, 0);
+}
+
+.fa-flag,
+.fa-bomb,
+.fa-question {
+  padding: 3px;
+  height: 25px;
+  width: 25px;
+}
+
+.modal {
+  position: absolute;
+  min-width: 50%;
+  width: fit-content;
+  height: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: #e9e9e9;
+  z-index: 11;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px;
+}
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 11;
+  transition-property: visibility, opacity;
+  transition-duration: 0.25s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-btn {
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e9e9e9;
+  background-position: 50% 50%;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.end-title {
+  text-align: center;
+}
+
+.end-text {
+  text-align: center;
 }

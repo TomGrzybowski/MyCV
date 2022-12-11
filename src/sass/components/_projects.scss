@@ -48,12 +48,20 @@
       position: absolute;
       left: -14px;
       top: 5px;
+      transition-property: all;
+      transition-duration: 200ms;
     }
 
     &:hover::before {
       //TODO SOME ANIMATIONS
-      //   content: "\f061";
-      //   font: var(--fa-font-regular);
+      content: "\f061";
+      font: var(--fa-font-regular);
+      font-weight: 900;
+      left: -15px;
+      top: 0;
+      background: rgba(0, 0, 0, 0);
+      // background-color: opacity(red);
+
       //   content: url("/src/assets/arrow-right-solid.svg");
       //   color: black;
       //   width: 10px;
