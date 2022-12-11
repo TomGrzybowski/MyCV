@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 const game = document.querySelector(".defuser__game"); //this is the main gameplay window
 const inputs = document.querySelectorAll("input");
 let rows = document.querySelector("#defuser__rows").value; //check for input how many rows
@@ -237,9 +237,9 @@ function insertBombs() {
     svg.classList.add("fa-solid");
     svg.classList.add("fa-bomb");
 
-    arr = el.split(" - ");
-    row = document.querySelector(".row-" + arr[0]);
-    col = row.querySelector(".col-" + arr[1]);
+    const arr = el.split(" - ");
+    const row = document.querySelector(".row-" + arr[0]);
+    const col = row.querySelector(".col-" + arr[1]);
 
     col.firstChild.append(svg);
   });
@@ -301,7 +301,6 @@ function setup() {
       "Too many bombs for so little cells. Please try different settings";
     return;
   }
-  console.log(checkSettings());
   createGrid();
   insertBombs();
   numbersSetup();
