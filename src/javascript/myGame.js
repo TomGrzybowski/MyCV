@@ -159,7 +159,7 @@ function updateBombsLeft() {
   const counter = document.querySelector(".defuser__bomb_counter_span");
 
   if (bombsLeft > 0) {
-    counter.textContent = Number(bombsLeft);
+    counter.textContent = bombsLeft;
   } else {
     counter.textContent = 0;
   }
@@ -220,7 +220,7 @@ function createGrid() {
 function insertBombs() {
   const bombs = new Set();
 
-  while (bombs.size !== Number(bombsAmount)) {
+  while (bombs.size !== bombsAmount) {
     let rowNr = Math.floor(Math.random() * rows) + 1;
     let colNr = Math.floor(Math.random() * cols) + 1;
     bombs.add(`${rowNr} - ${colNr}`);
