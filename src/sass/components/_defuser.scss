@@ -28,6 +28,32 @@
     margin: auto;
   }
 
+  &__rows {
+    position: relative;
+    &::after {
+      content: "max: 40";
+      color: $font-light;
+      position: absolute;
+      font-size: 0.8rem;
+      top: 25px;
+      left: 110%;
+      width: 60px;
+    }
+  }
+
+  &__cols {
+    position: relative;
+    &::after {
+      content: "max: 40";
+      color: $font-light;
+      position: absolute;
+      font-size: 0.8rem;
+      top: 25px;
+      left: 110%;
+      width: 60px;
+    }
+  }
+
   &__row {
     position: relative;
     display: flex;

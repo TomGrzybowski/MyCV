@@ -748,6 +748,30 @@ main > * {
   padding: 5px;
   margin: auto;
 }
+.defuser__rows {
+  position: relative;
+}
+.defuser__rows::after {
+  content: "max: 40";
+  color: rgb(117, 117, 117);
+  position: absolute;
+  font-size: 0.8rem;
+  top: 25px;
+  left: 110%;
+  width: 60px;
+}
+.defuser__cols {
+  position: relative;
+}
+.defuser__cols::after {
+  content: "max: 40";
+  color: rgb(117, 117, 117);
+  position: absolute;
+  font-size: 0.8rem;
+  top: 25px;
+  left: 110%;
+  width: 60px;
+}
 .defuser__row {
   position: relative;
   display: flex;
