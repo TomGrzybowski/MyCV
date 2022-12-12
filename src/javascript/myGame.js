@@ -13,7 +13,7 @@ const victoryScreen = document.querySelector(".victory");
 const defeatScreen = document.querySelector(".defeat");
 const closeBtn = document.querySelector(".close-btn");
 let won = false;
-let bombsLeft = Number(bombsAmount);
+let bombsLeft = bombsAmount;
 
 game.addEventListener("click", hideHider);
 game.addEventListener("contextmenu", flager);
@@ -186,7 +186,7 @@ function createGrid() {
   headerRow.append(bombCounter);
 
   game.append(headerRow);
-
+  // let calls = 1;
   for (let i = 1; i <= rows; i++) {
     // Create rows loop
     const rowDiv = document.createElement("div");
@@ -213,13 +213,18 @@ function createGrid() {
 
       cellDiv.append(hiderDiv); //add hidder
     }
+
+    // calls += 1;
+    // if (calls > 100) {
+    //   break;
+    // }
   }
 }
 
 function insertBombs() {
   const bombs = new Set();
 
-  while (bombs.size !== bombsAmount) {
+  while (bombs.size < bombsAmount) {
     let rowNr = Math.floor(Math.random() * rows) + 1;
     let colNr = Math.floor(Math.random() * cols) + 1;
     bombs.add(`${rowNr} - ${colNr}`);
@@ -303,6 +308,7 @@ function checkSettings() {
 
   return false;
 }
+
 //Sets up the playing field
 function setup() {
   game.innerHTML = ""; // clear content
