@@ -1,9 +1,9 @@
 "use strict";
 const game = document.querySelector(".defuser__game"); //this is the main gameplay window
 const inputs = document.querySelectorAll("input");
-let rows = document.querySelector("#defuser__rows").value; //check for input how many rows
-let cols = document.querySelector("#defuser__cols").value; //check for input how many cols
-let bombsAmount = document.querySelector("#defuser__bombs").value; //check for input how many cols
+let rows = Number(document.querySelector("#defuser__rows").value); //check for input how many rows
+let cols = Number(document.querySelector("#defuser__cols").value); //check for input how many cols
+let bombsAmount = Number(document.querySelector("#defuser__bombs").value); //check for input how many cols
 const selectRows = document.querySelectorAll(".defuser__row"); //selects all created rows
 const playButton = document.querySelector("#defuser__play"); //Select PLAY button
 const hiders = document.querySelectorAll(".unrevealed");
@@ -283,9 +283,25 @@ function numbersSetup() {
 }
 
 function checkSettings() {
-  if (Number(bombsAmount) > Number(rows) * Number(cols) - 1) {
+  const rowsLimit = Number(document.querySelector("#defuser__rows").max);
+  const colsLimit = Number(document.querySelector("#defuser__cols").max);
+  const bombsAmountLimit = Number(
+    document.querySelector("#defuser__bombs").max
+  );
+
+  // console.log(0 > rows > rowsLimit);
+
+  if (bombsAmount > rows * cols - 1) {
     return true;
   }
+
+  if (rows > rowsLimit || cols > colsLimit || bombsAmount > bombsAmountLimit) {
+    return true;
+  }
+  if (0 > rows || 0 > cols || 0 > bombsAmount) {
+    return true;
+  }
+
   return false;
 }
 //Sets up the playing field
@@ -295,10 +311,10 @@ function setup() {
   checkSettings();
   if (checkSettings()) {
     alert(
-      "So many bombs won't fit on such little grid. Please increase the size of playing field or lower the amount of bombs"
+      "Current settings do not allow to setup a game. Please Try adjusting the board size or amount of bombs."
     );
     game.textContent =
-      "Too many bombs for so little cells. Please try different settings";
+      "Current settings do not allow to setup a game. Please Try adjusting the board size or amount of bombs.";
     return;
   }
   createGrid();
