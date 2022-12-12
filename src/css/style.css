@@ -787,6 +787,9 @@ main > * {
   font-weight: 900;
   font-size: 1.3em;
 }
+.defuser__name {
+  text-align: center;
+}
 
 .unrevealed {
   position: absolute;
