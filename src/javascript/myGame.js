@@ -7,7 +7,6 @@ let bombsAmount = Number(document.querySelector("#defuser__bombs").value); //che
 const selectRows = document.querySelectorAll(".defuser__row"); //selects all created rows
 const playButton = document.querySelector("#defuser__play"); //Select PLAY button
 const hiders = document.querySelectorAll(".unrevealed");
-const body = document.querySelector("body");
 const cellsObj = {}; //This object will hold all cell coordinates and value true if it is revealed. It will be used to asses win condition
 const backdrop = document.querySelector(".backdrop");
 const victoryScreen = document.querySelector(".victory");
@@ -16,8 +15,8 @@ const closeBtn = document.querySelector(".close-btn");
 let won = false;
 let bombsLeft = Number(bombsAmount);
 
-body.addEventListener("click", hideHider);
-body.addEventListener("contextmenu", flager);
+game.addEventListener("click", hideHider);
+game.addEventListener("contextmenu", flager);
 closeBtn.addEventListener("click", closeModal);
 
 inputs.forEach((input) => {
@@ -133,10 +132,10 @@ function isBomb(selectedCell) {
 //Adds flag with a right click
 function flager(e) {
   const hiderBox = e.target;
+  e.preventDefault();
 
   if (hiderBox.classList[0] === "unrevealed") {
     //execute only if the hider is clicked
-    e.preventDefault();
     const svg = document.createElement("i");
     svg.classList.add("fa-solid");
     svg.classList.add("fa-flag");
