@@ -186,7 +186,6 @@ function createGrid() {
   headerRow.append(bombCounter);
 
   game.append(headerRow);
-  // let calls = 1;
   for (let i = 1; i <= rows; i++) {
     // Create rows loop
     const rowDiv = document.createElement("div");
@@ -213,11 +212,6 @@ function createGrid() {
 
       cellDiv.append(hiderDiv); //add hidder
     }
-
-    // calls += 1;
-    // if (calls > 100) {
-    //   break;
-    // }
   }
 }
 
