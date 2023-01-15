@@ -12,6 +12,7 @@ const backdrop = document.querySelector(".backdrop");
 const victoryScreen = document.querySelector(".victory");
 const defeatScreen = document.querySelector(".defeat");
 const closeBtn = document.querySelector(".close-btn");
+
 let won = false;
 let bombsLeft = bombsAmount;
 

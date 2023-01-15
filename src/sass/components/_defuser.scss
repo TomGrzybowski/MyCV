@@ -5,10 +5,12 @@
 }
 
 .defuser {
+  overflow: hidden;
   & > .container {
     padding: 10px;
-    display: relative;
+    position: relative;
     max-width: 100%;
+    overflow: hidden;
   }
 
   &__form {
